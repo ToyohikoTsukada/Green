@@ -1,0 +1,23 @@
+name: Green
+on:
+  repository_dispatch:
+    types: [Green]
+  workflow_dispatch:
+  
+jobs:
+   Green:
+    name: Green
+    runs-on: ubuntu-latest
+    steps:
+      - name: Green
+        uses: actions/checkout@v3
+
+      - name: Green
+        run: chmod +x ./Green.sh && ./Green.sh
+        
+      - name: Green
+        run: |
+          curl -X POST https://api.github.com/repos/ToyohikoTsukada/Green/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.ACCESS_TOKEN }} \
+          --data '{"event_type": "Green"}'
